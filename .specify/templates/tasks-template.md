@@ -8,6 +8,8 @@ description: "Task list template for feature implementation"
 **Input**: Design documents from `/specs/[###-feature-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
+**Constitution Compliance**: All tasks must adhere to the project constitution principles
+
 **Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
@@ -25,21 +27,21 @@ description: "Task list template for feature implementation"
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
 - Paths shown below assume single project - adjust based on plan.md structure
 
-<!-- 
+<!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
-  
+
   The /sp.tasks command MUST replace these with actual tasks based on:
   - User stories from spec.md (with their priorities P1, P2, P3...)
   - Feature requirements from plan.md
   - Entities from data-model.md
   - Endpoints from contracts/
-  
+
   Tasks MUST be organized by user story so each story can be:
   - Implemented independently
   - Tested independently
   - Delivered as an MVP increment
-  
+
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
@@ -48,9 +50,9 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create project structure per implementation plan (Constitution: No Manual Coding Allowed - Qwen generates all code)
+- [ ] T002 Initialize Python 3.12+ project with UV dependency management (Constitution: Technology & Constraints)
+- [ ] T003 [P] Configure linting and formatting tools (Constitution: Code Quality & Structure Requirements)
 
 ---
 
@@ -62,12 +64,12 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T004 Setup in-memory storage structure (Constitution: Additional Functional Requirements - tasks stored in memory only)
+- [ ] T005 [P] Implement CLI interface framework (Constitution: Additional Functional Requirements - interactive command loop)
+- [ ] T006 [P] Setup command parsing and handling (Constitution: Additional Functional Requirements - help, exit/quit commands)
+- [ ] T007 Create Task model/dataclass (Constitution: Required Features Implementation - Add Task feature)
+- [ ] T008 Configure error handling and validation (Constitution: Additional Functional Requirements - input validation)
+- [ ] T009 Setup project documentation structure (Constitution: Deliverables - README.md, QWEN.md)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -88,12 +90,12 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py (Constitution: Code Quality & Structure Requirements - type hints, docstrings)
+- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py (Constitution: Code Quality & Structure Requirements - type hints, docstrings)
+- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013) (Constitution: Code Quality & Structure Requirements)
+- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py (Constitution: No Manual Coding Allowed - Qwen generates all code)
+- [ ] T016 [US1] Add validation and error handling (Constitution: Additional Functional Requirements - clear error messages)
+- [ ] T017 [US1] Add logging for user story 1 operations (Constitution: Code Quality & Structure Requirements)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -112,10 +114,10 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 2
 
-- [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T021 [US2] Implement [Service] in src/services/[service].py
-- [ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T023 [US2] Integrate with User Story 1 components (if needed)
+- [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py (Constitution: Code Quality & Structure Requirements)
+- [ ] T021 [US2] Implement [Service] in src/services/[service].py (Constitution: Code Quality & Structure Requirements)
+- [ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py (Constitution: No Manual Coding Allowed)
+- [ ] T023 [US2] Integrate with User Story 1 components (if needed) (Constitution: Technology & Constraints - standard library only)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -134,9 +136,9 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 3
 
-- [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US3] Implement [Service] in src/services/[service].py
-- [ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py (Constitution: Code Quality & Structure Requirements)
+- [ ] T027 [US3] Implement [Service] in src/services/[service].py (Constitution: Code Quality & Structure Requirements)
+- [ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py (Constitution: No Manual Coding Allowed)
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -150,12 +152,12 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Documentation updates in docs/
-- [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
-- [ ] TXXX Run quickstart.md validation
+- [ ] TXXX [P] Documentation updates in docs/ (Constitution: Deliverables - README.md with setup/run instructions)
+- [ ] TXXX Code cleanup and refactoring (Constitution: Code Quality & Structure Requirements)
+- [ ] TXXX Performance optimization across all stories (Constitution: Additional Functional Requirements)
+- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/ (Constitution: Code Quality & Structure Requirements)
+- [ ] TXXX Security hardening (Constitution: Additional Functional Requirements)
+- [ ] TXXX Run quickstart.md validation (Constitution: Deliverables - fully working console app)
 
 ---
 
@@ -195,20 +197,6 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
-## Parallel Example: User Story 1
-
-```bash
-# Launch all tests for User Story 1 together (if tests requested):
-Task: "Contract test for [endpoint] in tests/contract/test_[name].py"
-Task: "Integration test for [user journey] in tests/integration/test_[name].py"
-
-# Launch all models for User Story 1 together:
-Task: "Create [Entity1] model in src/models/[entity1].py"
-Task: "Create [Entity2] model in src/models/[entity2].py"
-```
-
----
-
 ## Implementation Strategy
 
 ### MVP First (User Story 1 Only)
@@ -237,6 +225,18 @@ With multiple developers:
    - Developer B: User Story 2
    - Developer C: User Story 3
 3. Stories complete and integrate independently
+
+---
+
+## Constitution Compliance Notes
+
+- All code must be generated by Qwen (No Manual Coding Allowed)
+- Follow strict PEP 8 guidelines and include type hints (Code Quality & Structure Requirements)
+- Use only Python standard library (Technology & Constraints)
+- Store tasks in memory only (Additional Functional Requirements)
+- Implement all 5 required features (Required Features Implementation)
+- Include proper error handling and validation (Additional Functional Requirements)
+- Ensure all deliverables are included (Deliverables section)
 
 ---
 

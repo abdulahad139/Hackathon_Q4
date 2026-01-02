@@ -1,55 +1,66 @@
-# [PROJECT_NAME] Constitution
+<!-- SYNC IMPACT REPORT
+Version change: N/A -> 1.0.0
+Added sections: All principles and sections based on project requirements
+Removed sections: None
+Templates requiring updates:
+- .specify/templates/plan-template.md: ✅ updated
+- .specify/templates/spec-template.md: ✅ updated
+- .specify/templates/tasks-template.md: ✅ updated
+- .specify/templates/commands/*.md: N/A (no command template files found)
+Follow-up TODOs:
+- TODO(RATIFICATION_DATE): Date is placeholder, needs to be updated to actual ratification date
+-->
+# In-Memory Console Todo Application Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
+### No Manual Coding Allowed
 <!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
+You (Qwen) are the ONLY entity permitted to generate or modify code. All code must be produced exclusively by you based on approved specifications and tasks. Humans may only write/update specifications, review your output, provide feedback via prompts, and approve commits.
 <!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-### [PRINCIPLE_2_NAME]
+### Strict Spec-Driven Workflow
 <!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
+Every feature, refactor, or change MUST be preceded by a written specification in /specs/history/. Workflow order: a. Human provides or updates specification b. You generate a high-level plan c. You break the plan into small, atomic tasks d. You implement each task one by one, producing code only for that task e. After each task, wait for human approval/feedback before proceeding.
 <!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-### [PRINCIPLE_3_NAME]
+### Specification History Preservation
 <!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
+All specification versions MUST be saved in /specs/history/ with sequential, descriptive filenames (e.g., 001-initial-requirements.md, 002-add-update-feature.md).
 <!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### [PRINCIPLE_4_NAME]
+### Code Quality & Structure Requirements
 <!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
+Follow PEP 8 strictly, full type hints on all functions and classes, modular design with single responsibility, meaningful variable/function/class names, clear docstrings for modules, classes, and public functions.
 <!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-### [PRINCIPLE_5_NAME]
+### Technology & Constraints
 <!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
+Python 3.12+, dependency management: UV only, NO external third-party libraries (use only Python standard library), no Click, Typer, Rich, or similar CLI frameworks, use only built-in functions (input(), print(), etc.).
 <!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-### [PRINCIPLE_6_NAME]
+### Required Features Implementation
+All 5 required features (Add Task, List/View Tasks, Update Task, Delete Task, Mark Complete/Incomplete) must be fully implemented with proper error handling and validation.
 
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
+## Additional Functional Requirements
 <!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-[SECTION_2_CONTENT]
+Interactive command loop with prompt (e.g., '> '), Command: exit or quit to end program, Help command: help (lists all available commands with brief descriptions), Input validation and clear error messages, Tasks stored in memory only (list or dict, no file/database).
 <!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
 
-## [SECTION_3_NAME]
+## Deliverables
 <!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-[SECTION_3_CONTENT]
+Repository must contain: constitution.txt (this file, immutable), /specs/history/ with all spec versions, /src/ with clean Python code, README.md (setup via uv, run instructions), QWEN.md (documenting all prompts and iterations), Fully working console app.
 <!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
 <!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
+This constitution is the immutable guiding document. All specifications, plans, tasks, and code generated by Qwen MUST strictly adhere to it. If a request conflicts with this constitution, politely refuse and explain the conflict. All code changes must reference this constitution when generating plans or code.
 <!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: 1.0.0 | **Ratified**: 2025-01-01 | **Last Amended**: 2025-12-29
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
